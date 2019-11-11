@@ -1,25 +1,19 @@
 <template>
   <v-container>
-<div v-for="task in tasks" :key="task.id">
- <v-card>
-  <v-card-title
-   class="headline"
-   v-text="task.name">
-  </v-card-title>
- </v-card>
-</div>
+  <div v-for="task in tasks" :key="task.id">
+  <v-card>
+   <v-card-title
+    class="headline"
+    v-text="task.name" />
+  </v-card>
+ </div>
+ <button @click="clicked()">get from vuex</button>
   </v-container>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
-interface Task {
-  id:number;
- name:string;
- isFinished:boolean;
- updatedTimeStamp:number;
-}
 @Component
 export default class Todo extends Vue {
   tasks:Task[] = [
@@ -43,5 +37,9 @@ export default class Todo extends Vue {
     },
 
   ];
+
+  clicked() {
+    this.tasks = this.$store.getters.tasks as Task[];
+  }
 }
 </script>
