@@ -1,5 +1,16 @@
 # lovelab.vue
 
+lovelab(仮)(共同生活向けタスク管理&ありがとうを伝えるツール)(iphone app)のAPIサーバー実装に向けた検証用Webクライアントを試験的に制作
+
+## 技術スタック
+
+- Vue
+- TypeScript
+- Vuex
+- Vuetify
+
+こんな感じで、APIを叩いてVuexに格納し、Vue側で表示する
+
 ## Project setup
 ```
 yarn install
